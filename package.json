@@ -2,11 +2,16 @@
   "name": "@enhance/template-mixin",
   "version": "1.0.3",
   "description": "Template mixin for Enhance base element",
+  "types": "index.d.ts",
+  "tsd": {
+    "directory": "test/types"
+  },
   "main": "index.mjs",
   "scripts": {
-    "test": "run-s test:setup test:ci",
+    "test": "run-s test:setup test:ci test:types",
     "test:setup": "npx playwright install-deps",
     "test:ci": "web-test-runner \"test/*-test.html\" --node-resolve --playwright --browsers chromium firefox webkit",
+    "test:types": "tsd",
     "watch": "web-test-runner \"test/*-test.html\" --node-resolve --watch --playwright --browsers chromium firefox webkit"
   },
   "author": "@dam",
@@ -17,6 +22,7 @@
     "@web/test-runner": "^0.17.0",
     "@web/test-runner-playwright": "^0.10.1",
     "npm-run-all": "^4.1.5",
-    "playwright": "^1.36.2"
+    "playwright": "^1.36.2",
+    "tsd": "^0.31.2"
   }
 }
